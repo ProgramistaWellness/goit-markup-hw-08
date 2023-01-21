@@ -1,0 +1,14 @@
+.logo {
+  @extend %FontRaleway;
+  color: getColor("logo");
+  @include font(700, 26px, 1, 0.03em);
+  margin-right: 94px;
+  text-decoration: none;
+  &__accent {
+    color: getColor("brand");
+  }
+  &__footer {
+    color: getColor("brandAccent");
+    text-decoration: none;
+  }
+}

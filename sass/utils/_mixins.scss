@@ -1,0 +1,17 @@
+@mixin list($gap: 30px, $pTop: 5px, $pRight: 0, $pBottom: 5px, $pLeft: 0) {
+  gap: $gap;
+  padding-top: $pTop;
+  padding-right: $pRight;
+  padding-bottom: $pBottom;
+  padding-left: $pLeft;
+}
+@mixin border($color: getColor("brand"), $r: 4px) {
+  border: 1px solid $color;
+  border-radius: $r;
+}
+@mixin font($weight: 400, $size: 14px, $lHeight: 1, $ltrSpacing: 0.03em) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lHeight;
+  letter-spacing: $ltrSpacing;
+}

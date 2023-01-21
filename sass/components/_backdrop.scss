@@ -1,0 +1,146 @@
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0) rotate(360deg);
+}
+
+.backdrop {
+  visibility: visible;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  @extend .clients-list__wrapper;
+  background-color: getColor(backdropBg);
+  &__modal {
+    position: relative;
+    width: 528px;
+    min-height: 581px;
+    padding: 45px 40px 35px;
+    border-radius: 4px;
+    background-color: getColor(brandAccent);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.06),
+      1px 2px 4px rgba(0, 0, 0, 0.16);
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  &__title {
+    @include font(700, 20px, 1, 0.03em);
+    color: getColor(text);
+    @extend %textCenter;
+    margin-bottom: 12px;
+  }
+  &__input-wrapper {
+    position: relative;
+    &:focus-within {
+      fill: getColor(brand);
+    }
+  }
+  &__label {
+    position: relative;
+    font-size: 12px;
+    color: var(--paragraph-color);
+  }
+  &__icon {
+    @extend %positionAb;
+    @extend %transition;
+    top: 24px;
+    left: 12px;
+    transform: translateY(50%);
+  }
+  &__input {
+    width: 100%;
+    padding: 12px 0px 12px 42px;
+    @include border(getColor("backdropInputBorder"), 0);
+    font-size: 16px;
+    outline: none;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    @extend %transition;
+    &--textarea {
+      padding: 12px 0px 12px 16px;
+      @include font(400, 12px, 1, 0.01em);
+      resize: none;
+      &::placeholder {
+        color: getColor("placeholder");
+      }
+    }
+    &:focus {
+      @include border(getColor("brand"), 0);
+    }
+  }
+  &__checkbox-wrapper {
+    position: relative;
+    align-self: center;
+    margin-top: 25px;
+    @extend %transition;
+    & input:checked ~ .backdrop__checkbox {
+      background-color: getColor("brand");
+      @include border(getColor("brand"), 0);
+    }
+    & .backdrop__checkbox-input {
+      opacity: 0;
+      cursor: pointer;
+      margin-right: 8px;
+      height: 20px;
+      width: 20px;
+      z-index: 1;
+    }
+  }
+  &__checkbox {
+    @extend %positionAb;
+    top: 0;
+    left: 15px;
+    transform: translate(-100%, 50%);
+    width: 16px;
+    height: 15px;
+    @include border(getColor("text"), 2px);
+    z-index: 0;
+  }
+  &__checkbox-icon {
+    @extend %positionAb;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: getColor("brandAccent");
+    @extend %transition;
+  }
+  &__checkbox-label {
+    line-height: 1.7;
+    color: getColor("paragraph");
+    margin-top: 20px;
+  }
+  &__link {
+    color: getColor("brand");
+  }
+  &__btn {
+    padding: 10px 41px;
+    border: none;
+    margin-top: 30px;
+    align-self: center;
+  }
+  &__close {
+    @extend %positionAb;
+    top: 8px;
+    right: 8px;
+    @include border(rgba(0, 0, 0, 0.1), 50%);
+    background-color: getColor("brandAccent");
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  &__sign {
+    @extend %positionAb;
+    top: 50%;
+    left: 50%;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+  }
+}

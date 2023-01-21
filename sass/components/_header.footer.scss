@@ -1,0 +1,99 @@
+.header {
+  border-bottom: 1px solid getColor("headerBorder");
+  &__container {
+    @extend %flex;
+    @extend %center;
+    @extend %alignCenter;
+    justify-content: space-between;
+    padding: 24px 0 25px 0;
+  }
+  &__wrapper {
+    @extend %alignCenter;
+    @extend %flex;
+  }
+  &__navigation {
+    gap: 46px;
+    @extend %flex;
+  }
+  &__contact-info {
+    gap: 50px;
+    @extend %alignCenter;
+    @extend %flex;
+  }
+}
+
+.footer {
+  background-color: getColor("brandBg");
+  color: getColor("brandAccent");
+  &__container {
+    @extend %flex;
+  }
+  &__wrapper {
+    padding: 60px 0px;
+    margin-right: 70px;
+    position: relative;
+  }
+  &__social {
+    padding: 72px 0px;
+    margin-right: 70px;
+  }
+  &__contact {
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 20px;
+    @extend %flex;
+  }
+  &__address {
+    font-style: normal;
+  }
+  &__form-wrapper {
+    padding: 72px 0px 100px 0px;
+    @extend %flex;
+    flex-direction: row;
+    width: 580px;
+  }
+  &__form {
+    @extend %flex;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  &__input-wrapper {
+    display: block;
+  }
+  &__label {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  &__input {
+    padding: 8px;
+    @include border(getColor("footerLink"), 0);
+    @include font(400, 16px, 1.25, 0.03em);
+    background-color: inherit;
+    color: getColor("footerLink");
+    font-family: inherit;
+    outline: none;
+    width: 100%;
+    min-height: 50px;
+    margin-top: 20px;
+  }
+  &__submit-wrapper {
+    position: relative;
+    display: inline;
+  }
+}
+
+.submit__btn {
+  padding: 10px 42px;
+  @extend %textLeft;
+  color: inherit;
+  font-style: inherit;
+}
+
+.submit__icon {
+  @extend %positionAb;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%);
+  fill: getColor(brandAccent);
+}

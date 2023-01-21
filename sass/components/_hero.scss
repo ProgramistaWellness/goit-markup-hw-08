@@ -1,0 +1,41 @@
+.hero {
+  background-image: linear-gradient(
+      to bottom,
+      getColor("headerBg"),
+      getColor("headerBg")
+    ),
+    url(../images/header_image.jpg);
+  max-width: 1600px;
+  background-size: cover;
+  @extend %center;
+  &__container {
+    flex-direction: column;
+    @include list(30px, 100px, 0, 0, 0);
+    @extend %alignCenter;
+    @extend %center;
+    @extend %flex;
+  }
+  &__list {
+    @include list();
+    @extend %flex;
+  }
+  &__title {
+    @include font(900, 44px, 1.5, 0.06);
+    text-transform: uppercase;
+    color: getColor("brandAccent");
+    @extend %alignCenter;
+  }
+  &__tile {
+    background-color: getColor("sectionBg");
+    width: 270px;
+    height: 120px;
+    padding: 25px 100px;
+    margin-bottom: 30px;
+  }
+  &__heading {
+    font-weight: 700;
+    @extend %textLeft;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+}

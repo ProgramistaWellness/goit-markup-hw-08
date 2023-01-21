@@ -1,0 +1,20 @@
+.about {
+  padding: 100px 0;
+  &__tile {
+    position: relative;
+  }
+  &__name {
+    width: 370px;
+    min-height: 70px;
+    background-color: getColor("aboutNameBg");
+    @extend %positionAb;
+    top: 224px;
+  }
+  &__caption {
+    @include font(700, 14px, 1, 0.03em);
+    @extend %textCenter;
+    text-transform: uppercase;
+    color: getColor("brandAccent");
+    transform: translateY(200%);
+  }
+}
