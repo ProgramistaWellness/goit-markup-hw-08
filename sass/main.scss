@@ -36,6 +36,7 @@ figure {
   &__hero {
     line-height: 1.7;
     @extend %textLeft;
+    margin-top: 10px;
   }
   &__team {
     @extend %textCenter;
@@ -57,86 +58,47 @@ figure {
     color: getColor("brandAccent");
   }
 }
-
-.container {
-  width: 1200px;
-  @extend %center;
-}
-
-.section {
-  padding: 94px 0;
-  &:nth-child(3) {
-    padding: 0 0 94px 0;
-  }
-}
-
-.image {
-  display: block;
-}
-
-.link {
-  @extend %transition;
-  @include font(500, 14px, 1, 0.02em);
-  &:hover,
-  &:focus {
-    color: getColor("brand");
-  }
-  &__header {
-    color: getColor("text");
-    text-decoration: none;
-    &--active {
-      position: relative;
-      &::after {
-        content: "";
-        width: 100%;
-        height: 4px;
-        border-radius: 2px;
-        background-color: getColor("brand");
-        @extend %positionAb;
-        bottom: 0;
-        left: 0;
-        transform: translateY(31px);
-      }
+@media screen and (min-width: 1200px) {
+  .paragraph {
+    line-height: 1.5;
+    color: getColor("paragraph");
+    &__hero {
+      line-height: 1.7;
+    }
+    &__team {
+      margin-bottom: 16px;
+    }
+    &__footer {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: getColor("brandAccent");
+      margin-bottom: 20px;
+    }
+    &__overly {
+      width: 301px;
+      color: getColor("brandAccent");
     }
   }
-  &__contact-info {
-    color: getColor("paragraph");
+}
+
+.container {
+  max-width: 768px;
+  @extend %center;
+  @extend %alignCenter;
+  @extend %justifyCenter;
+}
+.section {
+  padding: 60px 15px;
+  &:nth-child(3) {
+    padding: 0 15px 60px 15px;
+  }
+  &__heading {
+    @include font(700, 28px, 1.2, 0.03em);
     @extend %textCenter;
-    line-height: 1.5;
-    text-decoration: none;
-  }
-  &__footer {
-    color: getColor("footerLink");
-    text-decoration: none;
+    margin-bottom: 50px;
+    margin-top: 0;
   }
 }
-
-.button {
-  @include font(700, 16px, 2, 0.03em);
-  border-radius: 4px;
-  background-color: getColor("brand");
-  color: getColor("brandAccent");
-  min-width: 200px;
-  cursor: pointer;
-  padding: 10px 42px;
-  @extend %textCenter;
-  border: none;
-}
-
-.section__heading {
-  @include font(700, 36px, 1.2, 0.03em);
-  @extend %textCenter;
-  margin-bottom: 50px;
-  margin-top: 0;
-}
-
-.icon {
-  fill: currentColor;
-  &__header {
-    margin-right: 10px;
-  }
-}
-
 .list {
   gap: 10px;
   @extend %flex;
@@ -169,5 +131,130 @@ figure {
         color: getColor("brandAcceent");
       }
     }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1600px;
+  }
+  .section {
+    padding: 94px 0;
+    &:nth-child(3) {
+      padding: 0 0 94px 0;
+    }
+    &__heading {
+      font-size: 36px;
+    }
+  }
+  .list {
+    gap: 10px;
+    @extend %flex;
+    &__about {
+      @include list();
+      @extend %flex;
+    }
+    &__item {
+      width: 44px;
+      height: 44px;
+      padding: 12px;
+      color: getColor("socialIconBg");
+      border-radius: 50%;
+      cursor: pointer;
+      @extend %transition;
+      &:hover,
+      &:focus {
+        background-color: getColor("brand");
+        color: getColor("brandAcceent");
+        & .icon {
+          fill: getColor("brandAccent");
+        }
+      }
+      &--reverse {
+        background-color: getColor("iconBgReverse");
+        &:hover,
+        &:focus {
+          background-color: getColor("brand");
+          border-radius: 50%;
+          color: getColor("brandAcceent");
+        }
+      }
+    }
+  }
+}
+
+.image {
+  display: block;
+}
+
+.link {
+  @extend %transition;
+  @include font(500, 14px, 1, 0.02em);
+  &:hover,
+  &:focus {
+    color: getColor("brand");
+    text-decoration: none;
+  }
+  &__header {
+    color: getColor("text");
+    text-decoration: none;
+    &--active {
+      position: relative;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: getColor("brand");
+        @extend %positionAb;
+        bottom: 0;
+        left: 0;
+        transform: translateY(31px);
+      }
+    }
+  }
+  &__contact-info {
+    color: getColor("paragraph");
+    @extend %textCenter;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+  &__footer {
+    color: getColor("footerLink");
+    text-decoration: none;
+  }
+  &__menu {
+    text-decoration: none;
+    &--nav {
+      font-size: 40px;
+      color: getColor("text");
+    }
+    &--mail {
+      font-size: 32px;
+      color: getColor("brand");
+    }
+    &--tel {
+      font-size: 24px;
+      color: getColor("paragraph");
+    }
+  }
+}
+
+.button {
+  @include font(700, 16px, 2, 0.03em);
+  border-radius: 4px;
+  background-color: getColor("brand");
+  color: getColor("brandAccent");
+  min-width: 200px;
+  cursor: pointer;
+  padding: 10px 42px;
+  @extend %textCenter;
+  border: none;
+}
+
+.icon {
+  fill: currentColor;
+  &__header {
+    margin-right: 10px;
   }
 }

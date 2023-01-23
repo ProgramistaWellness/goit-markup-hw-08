@@ -4,38 +4,62 @@
       getColor("headerBg"),
       getColor("headerBg")
     ),
-    url(../images/header_image.jpg);
-  max-width: 1600px;
+    url(../images/Header_image_mobile.jpg);
+  max-width: 768px;
   background-size: cover;
   @extend %center;
   &__container {
     flex-direction: column;
-    @include list(30px, 100px, 0, 0, 0);
+    @include list(30px, 118px, 58px, 118px, 57px);
     @extend %alignCenter;
-    @extend %center;
     @extend %flex;
   }
   &__list {
     @include list();
     @extend %flex;
+    flex-direction: column;
+    flex-basis: calc(100% - 30px);
   }
   &__title {
-    @include font(900, 44px, 1.5, 0.06);
+    @include font(900, 26px, 1.5, 0.06);
     text-transform: uppercase;
+    text-align: center;
     color: getColor("brandAccent");
     @extend %alignCenter;
   }
   &__tile {
     background-color: getColor("sectionBg");
-    width: 270px;
-    height: 120px;
-    padding: 25px 100px;
-    margin-bottom: 30px;
+    width: calc(100% - 30px);
+    max-height: 120px;
+    padding: 25px 0;
+    @extend %flex;
+    @extend %justifyCenter;
+  }
+  &__figcaption {
+    width: calc(100% - 30px);
   }
   &__heading {
     font-weight: 700;
-    @extend %textLeft;
+    @extend %textCenter;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+}
+@media sreen and (min-width: 1200px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        getColor("headerBg"),
+        getColor("headerBg")
+      ),
+      url(../images/header_image.jpg);
+    max-width: 1600px;
+    &__tile {
+      max-width: 270px;
+      padding: 25px 100px;
+    }
+    &__heading {
+      text-align: left;
+    }
   }
 }

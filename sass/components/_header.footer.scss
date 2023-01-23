@@ -1,6 +1,7 @@
 .header {
   border-bottom: 1px solid getColor("headerBorder");
   &__container {
+    position: relative;
     @extend %flex;
     @extend %center;
     @extend %alignCenter;
@@ -19,6 +20,29 @@
     gap: 50px;
     @extend %alignCenter;
     @extend %flex;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    border-bottom: 1px solid getColor("headerBorder");
+    &__container {
+      position: relative;
+      justify-content: space-between;
+      padding: 24px 0 25px 0;
+    }
+    &__navigation {
+      gap: 46px;
+    }
+    &__contact-info {
+      gap: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__navigation,
+  .header__contact-info {
+    display: none;
   }
 }
 
