@@ -101,7 +101,8 @@
                   <h3 class="hero__heading">Lorem, ipsum</h3>
                   <p class="paragraph paragraph__hero">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nisi temporibus quia nesciunt. Adipisci, culpa earum.
+                    Nisi temporibus quia nesciunt. Adipisci, culpa earum. Lorem
+                    ipsum dolor sit amet consectetur.
                   </p>
                 </figcaption>
               </figure>
@@ -117,7 +118,8 @@
                   <h3 class="hero__heading">Lorem, ipsum</h3>
                   <p class="paragraph paragraph__hero">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nisi temporibus quia nesciunt. Adipisci, culpa earum.
+                    Nisi temporibus quia nesciunt. Adipisci, culpa earum. Lorem
+                    ipsum dolor sit amet consectetur.
                   </p>
                 </figcaption>
               </figure>
@@ -133,7 +135,8 @@
                   <h3 class="hero__heading">Lorem, ipsum</h3>
                   <p class="paragraph paragraph__hero">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nisi temporibus quia nesciunt. Adipisci, culpa earum.
+                    Nisi temporibus quia nesciunt. Adipisci, culpa earum. Lorem
+                    ipsum dolor sit amet consectetur.
                   </p>
                 </figcaption>
               </figure>
@@ -149,7 +152,8 @@
                   <h3 class="hero__heading">Lorem, ipsum</h3>
                   <p class="paragraph paragraph__hero">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nisi temporibus quia nesciunt. Adipisci, culpa earum.
+                    Nisi temporibus quia nesciunt. Adipisci, culpa earum. Lorem
+                    ipsum dolor sit amet consectetur.
                   </p>
                 </figcaption>
               </figure>
@@ -413,18 +417,18 @@
             <a class="logo logo__footer" href="index.html"
               ><span class="logo__accent">Web</span>Studio</a
             >
-            <ul class="footer__contact">
-              <li>
+            <ul class="footer__contacts">
+              <li class="footer__contact">
                 <address class="footer__address">
                   m. Warszawa, Aleje Jerozolimskie 21
                 </address>
               </li>
-              <li>
+              <li class="footer__contact">
                 <a class="link link__footer" href="mailto:info@devstudio.com"
                   >info@devstudio.com</a
                 >
               </li>
-              <li>
+              <li class="footer__contact">
                 <a class="link link__footer" href="tel:48111111111"
                   >+48 111 111 111</a
                 >
@@ -434,7 +438,7 @@
 
           <div class="footer__social">
             <p class="paragraph__footer">dołącz do nas</p>
-            <ul class="list">
+            <ul class="list list__footer">
               <li class="list__item list__item--reverse">
                 <svg class="icon" width="20px" height="20px">
                   <use href="images/icons.svg#icon-instagram"></use>
@@ -460,14 +464,17 @@
           <div class="footer__form-wrapper">
             <form class="footer__form">
               <div class="footer__input-wrapper">
-                <label class="footer__label"
-                  >Zapisz się do newslettera
-                  <input
-                    type="email"
-                    placeholder="E-mail"
-                    class="footer__input"
-                  />
-                </label>
+                <label for="emailFooter" class="footer__label"
+                  >Zapisz się do newslettera</label
+                >
+
+                <input
+                  type="email"
+                  placeholder="E-mail"
+                  class="footer__input"
+                  name="email"
+                  id="emailFooter"
+                />
               </div>
               <div class="footer__submit-wrapper">
                 <button class="button submit__btn" type="submit">

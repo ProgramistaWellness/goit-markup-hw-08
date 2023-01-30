@@ -82,7 +82,7 @@ figure {
 }
 
 .container {
-  max-width: 768px;
+  max-width: 480px;
   @extend %center;
   @extend %alignCenter;
   @extend %justifyCenter;
@@ -105,6 +105,9 @@ figure {
   &__about {
     @include list();
     @extend %flex;
+  }
+  &__footer {
+    @extend %justifyCenter;
   }
   &__item {
     width: 44px;

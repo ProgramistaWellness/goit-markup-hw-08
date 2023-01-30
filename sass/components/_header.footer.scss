@@ -49,45 +49,30 @@
 .footer {
   background-color: getColor("brandBg");
   color: getColor("brandAccent");
-  &__container {
-    @extend %flex;
-  }
   &__wrapper {
-    padding: 60px 0px;
-    margin-right: 70px;
+    @extend %textCenter;
+    padding: 60px 15px;
     position: relative;
   }
   &__social {
-    padding: 72px 0px;
-    margin-right: 70px;
+    @extend .footer__wrapper;
+  }
+  &__contacts {
+    margin-top: 20px;
   }
   &__contact {
-    flex-direction: column;
-    gap: 9px;
-    margin-top: 20px;
-    @extend %flex;
+    margin-top: 8px;
   }
   &__address {
     font-style: normal;
   }
   &__form-wrapper {
-    padding: 72px 0px 100px 0px;
-    @extend %flex;
-    flex-direction: row;
-    width: 580px;
-  }
-  &__form {
-    @extend %flex;
-    align-items: flex-end;
-    gap: 10px;
-  }
-  &__input-wrapper {
-    display: block;
+    @extend .footer__wrapper;
   }
   &__label {
+    @extend %textCenter;
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 20px;
   }
   &__input {
     padding: 8px;
@@ -104,6 +89,7 @@
   &__submit-wrapper {
     position: relative;
     display: inline;
+    margin-top: 20px;
   }
 }
 
@@ -112,6 +98,40 @@
   @extend %textLeft;
   color: inherit;
   font-style: inherit;
+}
+@media screen and (max-width: 480px) {
+  .submit__btn {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    &__container {
+      display: flex;
+    }
+    &__social {
+      padding: 72px 0px;
+      margin-right: 70px;
+    }
+    &__contact {
+      flex-direction: column;
+      gap: 9px;
+      margin-top: 20px;
+    }
+    &__form-wrapper {
+      padding: 72px 0px 100px 0px;
+      flex-direction: row;
+      width: 580px;
+    }
+    &__form {
+      align-items: flex-end;
+      gap: 10px;
+    }
+    &__input-wrapper {
+      display: block;
+    }
+  }
 }
 
 .submit__icon {
