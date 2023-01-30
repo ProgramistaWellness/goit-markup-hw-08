@@ -9,6 +9,9 @@
     padding: 30px 32px;
     background-color: getColor("brandAccent");
     border-radius: 0 0 4px 4px;
+    @extend %flex;
+    flex-direction: column;
+    @extend %alignCenter;
   }
   &__heading {
     @include font(500, 16px, 1.2, 00.03em);
