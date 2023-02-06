@@ -32,7 +32,6 @@
             aria-expanded="false"
             aria-controls="mobile-menu"
           >
-            a
             <svg width="24" height="24" viewBox="0 0 20 20">
               <use href="images/icons.svg#icon-menu"></use>
             </svg>
@@ -77,12 +76,8 @@
       <!--HERO-->
       <section class="section hero">
         <div class="container hero__container">
-          <h1 class="hero__title">
-            EFEKTYWNE ROZWIĄZANIA
-            <br />
-            DLA WASZEGO BIZNESU
-          </h1>
-          <button class="button" type="button" data-modal-open>
+          <h1 class="hero__title">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
+          <button class="button hero__btn" type="button" data-modal-open>
             Zamów usługę
           </button>
         </div>
@@ -90,7 +85,7 @@
       <section class="section">
         <div class="container">
           <ul class="hero__list">
-            <li>
+            <li class="hero__item">
               <figure>
                 <div class="hero__tile">
                   <svg width="70" height="70">
@@ -107,7 +102,7 @@
                 </figcaption>
               </figure>
             </li>
-            <li>
+            <li class="hero__item">
               <figure>
                 <div class="hero__tile">
                   <svg width="70" height="70">
@@ -124,7 +119,7 @@
                 </figcaption>
               </figure>
             </li>
-            <li>
+            <li class="hero__item">
               <figure>
                 <div class="hero__tile">
                   <svg width="70" height="70">
@@ -141,7 +136,7 @@
                 </figcaption>
               </figure>
             </li>
-            <li>
+            <li class="hero__item">
               <figure>
                 <div class="hero__tile">
                   <svg width="70" height="70">
@@ -213,10 +208,19 @@
               <figure class="team__figure">
                 <img
                   class="image"
-                  src="images/team/teamcard_1.jpg"
+                  src="images/team/teamcard_1_270.jpg"
                   alt="Zdjęcie pierwszego członka zespołu, mężczyzna z brodą"
-                  width="270"
-                  height="260"
+                  srcset="
+                    ../images/team/teamcard_1_354.jpg 354w,
+                    ../images/team/teamcard_1_406.jpg 406w,
+                    ../images/team/teamcard_1_450.jpg 450w,
+                    ../images/team/teamcard_1_531.jpg 531w,
+                    ../images/team/teamcard_1_540.jpg 540w,
+                    ../images/team/teamcard_1_676.jpg 676w,
+                    ../images/team/teamcard_1_708.jpg 708w,
+                    ../images/team/teamcard_1_900.jpg 900w
+                  "
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, calc(100vw - 30px)"
                 />
                 <figcaption class="team__figcaption">
                   <h3 class="team__heading">Jon Doe</h3>
@@ -250,10 +254,16 @@
               <figure class="team__figure">
                 <img
                   class="image"
-                  src="images/team/teamcard_2.jpg"
+                  src="images/team/teamcard_2_270.jpg"
                   alt="Zdjęcie drugiego członka zespołu Blondynka w okularach"
-                  width="270"
-                  height="260"
+                  srcset="
+                    ../images/team/teamcard_2_354.jpg 354w,
+                    ../images/team/teamcard_2_450.jpg 450w,
+                    ../images/team/teamcard_2_540.jpg 540w,
+                    ../images/team/teamcard_2_708.jpg 708w,
+                    ../images/team/teamcard_2_900.jpg 900w
+                  "
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, calc(100vw - 30px)"
                 />
                 <figcaption class="team__figcaption">
                   <h3 class="team__heading">Jon Doe</h3>
@@ -289,8 +299,14 @@
                   class="image"
                   src="images/team/teamcard_3.jpg"
                   alt="Zdjęcie trzeciego członka zespołu, mężczyzna w białej koszuli"
-                  width="270"
-                  height="260"
+                  srcset="
+                    ../images/team/teamcard_3_354.jpg 354w,
+                    ../images/team/teamcard_3_450.jpg 450w,
+                    ../images/team/teamcard_3_556.jpg 540w,
+                    ../images/team/teamcard_3_708.jpg 708w,
+                    ../images/team/teamcard_3_900.jpg 900w
+                  "
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, calc(100vw - 30px)"
                 />
                 <figcaption class="team__figcaption">
                   <h3 class="team__heading">Jon Doe</h3>
@@ -326,8 +342,14 @@
                   class="image"
                   src="images/team/teamcard_4.jpg"
                   alt="Zdjęcie czwartego członka zespołu, mężczyzna w czarnym podkoszulku z brodą i w okularach"
-                  width="270"
-                  height="260"
+                  srcset="
+                    ../images/team/teamcard_4_354.jpg 354w,
+                    ../images/team/teamcard_4_450.jpg 450w,
+                    ../images/team/teamcard_4_540.jpg 540w,
+                    ../images/team/teamcard_4_708.jpg 708w,
+                    ../images/team/teamcard_4_900.jpg 900w
+                  "
+                  sizes="(min-width: 1200px) 270px, (min-width: 768px) 354px, calc(100vw - 30px)"
                 />
                 <figcaption class="team__figcaption">
                   <h3 class="team__heading">Jon Doe</h3>
@@ -489,15 +511,23 @@
         </div>
       </footer>
     </main>
-    <div class="menu js-menu-container" id="mobile-menu">
-      <button type="button" class="menu__close-btn js-close-menu">
-        <svg class="icon menu__sign" viewBox="0 0 20 20" width="19" height="19">
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button
+        type="button"
+        class="menu-toggle menu-container__close-btn js-close-menu"
+      >
+        <svg
+          class="icon menu-container__sign"
+          viewBox="0 0 20 20"
+          width="19"
+          height="19"
+        >
           <use href="images/icons.svg#icon-close"></use>
         </svg>
       </button>
       <div>
         <nav>
-          <ul class="menu__navigation">
+          <ul class="menu-container__navigation">
             <li>
               <a class="link link__menu link__menu--nav" href="index.html"
                 >Agencja</a
@@ -515,7 +545,7 @@
         </nav>
       </div>
       <div>
-        <ul class="menu__contact-info">
+        <ul class="menu-container__contact-info">
           <li>
             <a
               class="link link__menu link__menu--mail"
@@ -530,11 +560,11 @@
             >
           </li>
         </ul>
-        <ul class="menu__socials">
-          <li class="menu__social">Instagram</li>
-          <li class="menu__social">Twitter</li>
-          <li class="menu__social">Facebook</li>
-          <li class="menu__social">LinkedIn</li>
+        <ul class="menu-container__socials">
+          <li class="menu-container__social">Instagram</li>
+          <li class="menu-container__social">Twitter</li>
+          <li class="menu-container__social">Facebook</li>
+          <li class="menu-container__social">LinkedIn</li>
         </ul>
       </div>
     </div>

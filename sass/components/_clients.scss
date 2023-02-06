@@ -1,17 +1,14 @@
 .clients-list {
   color: getColor("socialIconBg");
-  column-count: 2;
-  column-gap: 30px;
   @extend %center;
   &__item {
     @extend %flex;
     @extend %alignCenter;
     @extend %justifyCenter;
     @include border(currentColor, 4px);
-    width: 170px;
     height: 92px;
     cursor: pointer;
-    @extend %transition;
+    @extend %transitionColor;
     &:hover,
     &:focus {
       color: getColor("brand");
@@ -21,16 +18,32 @@
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .clients-list {
+    column-count: 2;
+    &__item {
+      width: calc(50vw - 30px);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .clients-list {
+    display: block;
+    column-count: 3;
+    column-gap: 30px;
+    &__item {
+      width: calc(33vw - 30px);
+    }
+  }
+}
 @media screen and (min-width: 1200px) {
   .clients-list {
+    display: flex;
+    gap: 30px;
     &__item {
       width: 170px;
       height: 92px;
-      cursor: pointer;
-      &:hover,
-      &:focus {
-        color: getColor("brand");
-      }
     }
   }
 }

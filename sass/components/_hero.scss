@@ -4,23 +4,12 @@
       getColor("headerBg"),
       getColor("headerBg")
     ),
-    url(../images/Header_image_mobile.jpg);
+    url(../images/header_image_mobile.jpg);
   background-size: cover;
   @extend %center;
-  &__container {
-    flex-direction: column;
-    @include list(30px, 118px, 58px, 118px, 57px);
-    @extend %alignCenter;
-    @extend %flex;
-  }
-  &__list {
-    @include list();
-    @extend %flex;
-    flex-direction: column;
-    flex-basis: calc(100% - 30px);
-  }
+
   &__title {
-    @include font(900, 26px, 1.5, 0.06);
+    @include font(900, 26px, 1.5, 0.06em);
     text-transform: uppercase;
     text-align: center;
     color: getColor("brandAccent");
@@ -38,16 +27,46 @@
     text-transform: uppercase;
     margin-top: 30px;
   }
+  &__btn {
+    @extend %center;
+    display: block;
+    margin-top: 30;
+  }
 }
+
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/Header_image_mobile@2x.jpg);
+    background-image: url(../images/header_image_mobile@2x.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        getColor("headerBg"),
+        getColor("headerBg")
+      ),
+      url(../images/header_image_tablet.jpg);
+    &__list {
+      column-count: 2;
+      column-gap: 30px;
+    }
+    &__item {
+      max-width: calc(50vw - 30px);
+    }
+    &__title {
+      max-width: 15em;
+      margin: 0 auto;
+    }
+    &__heading {
+      text-align: left;
+    }
   }
 }
 
-@media sreen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .hero {
     background-image: linear-gradient(
         to bottom,
@@ -55,12 +74,15 @@
         getColor("headerBg")
       ),
       url(../images/header_image.jpg);
-    &__tile {
-      max-width: 270px;
-      padding: 25px 100px;
+
+    &__list {
+      column-count: 4;
     }
-    &__heading {
-      text-align: left;
+    &__item {
+      max-width: 270px;
+    }
+    &__tile {
+      padding: 25px 100px;
     }
   }
 }

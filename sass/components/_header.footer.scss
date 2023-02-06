@@ -6,40 +6,39 @@
     @extend %center;
     @extend %alignCenter;
     justify-content: space-between;
-    padding: 24px 0 25px 0;
+    padding: 10px 15px;
   }
   &__wrapper {
     @extend %alignCenter;
     @extend %flex;
   }
-  &__navigation {
-    gap: 46px;
-    @extend %flex;
-  }
-  &__contact-info {
-    gap: 50px;
-    @extend %alignCenter;
-    @extend %flex;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    &__container {
+      padding: 21px 15px;
+    }
+    &__navigation {
+      gap: 60px;
+      display: flex;
+      margin-left: 83px;
+    }
   }
 }
 @media screen and (min-width: 1200px) {
   .header {
-    border-bottom: 1px solid getColor("headerBorder");
     &__container {
-      position: relative;
-      justify-content: space-between;
       padding: 24px 0 25px 0;
-    }
-    &__navigation {
-      gap: 46px;
     }
     &__contact-info {
       gap: 50px;
+      align-items: center;
+      display: flex;
     }
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .header__navigation,
   .header__contact-info {
     display: none;
@@ -50,7 +49,6 @@
   background-color: getColor("brandBg");
   color: getColor("brandAccent");
   &__wrapper {
-    @extend %textCenter;
     padding: 60px 15px;
     position: relative;
   }
@@ -99,25 +97,61 @@
   color: inherit;
   font-style: inherit;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1200px) {
   .submit__btn {
     margin-top: 20px;
   }
-}
-
-@media screen and (min-width: 1200px) {
   .footer {
+    &__wrapper {
+      text-align: center;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    &__wrapper {
+      padding: 60px 75px;
+    }
     &__container {
       display: flex;
+    }
+    &__form-wrapper {
+      min-width: 300px;
+      margin: 0 auto;
+    }
+    &__input-wrapper {
+      display: block;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .footer {
+    &__container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: center;
+    }
+    &__contacts {
+      flex-direction: column;
+      gap: 9px;
+      margin-top: 20px;
     }
     &__social {
       padding: 72px 0px;
       margin-right: 70px;
     }
-    &__contact {
-      flex-direction: column;
-      gap: 9px;
-      margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer {
+    &__social {
+      padding: 72px 0px;
+    }
+    &__wrapper {
+      padding: 60px 70px 60px 0;
+    }
+    &__contacts {
+      min-width: 246px;
     }
     &__form-wrapper {
       padding: 72px 0px 100px 0px;
@@ -125,6 +159,7 @@
       width: 580px;
     }
     &__form {
+      display: flex;
       align-items: flex-end;
       gap: 10px;
     }
