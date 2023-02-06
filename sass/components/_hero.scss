@@ -30,7 +30,15 @@
   &__btn {
     @extend %center;
     display: block;
-    margin-top: 30;
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 455px) {
+  .hero {
+    &__title {
+      max-width: 15em;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -55,10 +63,6 @@
     }
     &__item {
       max-width: calc(50vw - 30px);
-    }
-    &__title {
-      max-width: 15em;
-      margin: 0 auto;
     }
     &__heading {
       text-align: left;
