@@ -4,7 +4,7 @@
       getColor("headerBg"),
       getColor("headerBg")
     ),
-    url(/images/header_image_mobile.jpg);
+    url(./images/header_image_mobile.jpg);
   background-size: cover;
   @extend %center;
 
@@ -38,7 +38,7 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .hero {
-    background-image: url(/images/header_image_mobile@2x.jpg);
+    background-image: url(./images/header_image_mobile@2x.jpg);
   }
 }
 @media screen and (min-width: 768px) {
@@ -48,7 +48,7 @@
         getColor("headerBg"),
         getColor("headerBg")
       ),
-      url(/images/header_image_tablet.jpg);
+      url(./images/header_image_tablet.jpg);
     &__list {
       column-count: 2;
       column-gap: 30px;
@@ -73,7 +73,7 @@
         getColor("headerBg"),
         getColor("headerBg")
       ),
-      url(/images/header_image.jpg);
+      url(./images/header_image.jpg);
 
     &__list {
       column-count: 4;
